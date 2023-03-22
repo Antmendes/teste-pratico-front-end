@@ -1,0 +1,18 @@
+.header_toolbar {
+    display: flex;
+    justify-content: space-around;
+    height: 15%;
+}
+
+.header_title h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 500;
+    font-style: oblique;
+}
+
+.header_btns button{
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
