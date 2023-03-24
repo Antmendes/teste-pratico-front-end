@@ -1,0 +1,56 @@
+mat-card {
+    max-width: 80%;
+    margin: 2em auto;
+    background-color: #ffffff;
+    
+  }
+
+  mat-toolbar {
+    height: 5rem;
+    font-size: 1.7rem;
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .post_container {
+    margin-top: 2em;
+    background-color: #B388FF;
+    padding: 1em;
+  }
+
+  .post_container h3 {
+    font-weight: 500;
+    font-size: 1.1rem;
+    
+  }
+
+  .post_container p {
+    color: #FFF8E1;
+    font-size: 1rem;
+    font-style: oblique;
+  }
+
+  .post_container button {
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .post_comments {
+    display: flex;
+    font-size: 0.7rem;
+  }
+
+  .post_comments span {
+    color: #990606;
+    font-weight: 500;
+  }
+
+  .post_comments p {
+    color: rgb(59, 57, 57);
+    font-style: initial;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding-left: 4px;
+  }
+
+  
