@@ -1,0 +1,30 @@
+
+mat-toolbar {
+    height: 5rem;
+    font-size: 1.7rem;
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .users_container {
+    margin-top: 2em;
+    background-color: #B388FF;
+    padding: 1em;
+  }
+
+  .users_container h3 {
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+
+  .users_container p {
+    color: #FFF8E1;
+    font-size: 1rem;
+  }
+
+  .users_container span {
+    color: #990606;
+    font-weight: 500;
+  }
+
+

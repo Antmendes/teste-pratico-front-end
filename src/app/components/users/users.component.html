@@ -1,0 +1,12 @@
+<mat-card class="mat-elevation-z8">
+    <mat-toolbar class="mat-elevation-z8" color="accent">Users</mat-toolbar>
+    <mat-card-content class="users_container mat-elevation-z8" *ngFor="let user of listUsers">
+      
+         <h3>{{user.name}}</h3>
+         <p><span> username: </span>{{user.username}}</p>
+         <p><span> email: </span>{{user.email}}</p>
+         <p><span> phone: </span>{{user.phone}}</p>
+         <p><span> website: </span>{{user.website}}</p>
+      
+    </mat-card-content>
+</mat-card>

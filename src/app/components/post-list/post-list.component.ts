@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import { Comments } from 'src/app/model/comments';
 import { Post } from 'src/app/model/post';
 import { PostsService } from 'src/app/services/posts.service';
+import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-post-list',
@@ -16,8 +17,8 @@ export class PostListComponent implements OnInit {
   
   
 
-  constructor(private router: Router,
-    private postsService: PostsService) 
+  constructor(private postsService: PostsService,
+    public dialog: MatDialog) 
     {
       this.postsService.getListPosts().subscribe(
         (data) => {
@@ -25,7 +26,9 @@ export class PostListComponent implements OnInit {
           
         },
         (error) => {
-          console.log(error)
+          this.dialog.open(ErrorDialogComponent, {
+            data: error
+          })
         }
       )
       
@@ -41,7 +44,9 @@ export class PostListComponent implements OnInit {
         this.comments = res
       },
       (error) => {
-        console.log(error)
+        this.dialog.open(ErrorDialogComponent, {
+          data: error
+        })
       }
      )
   }

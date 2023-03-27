@@ -8,12 +8,16 @@ import { MaterialModule } from './material/material.module';
 import { HeaderComponent } from './components/header/header.component';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UsersComponent } from './components/users/users.component';
+import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    PostListComponent
+    PostListComponent,
+    UsersComponent,
+    ErrorDialogComponent
   ],
   imports: [
     BrowserModule,

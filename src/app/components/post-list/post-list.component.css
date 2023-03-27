@@ -1,16 +1,11 @@
-mat-card {
-    max-width: 80%;
-    margin: 2em auto;
-    background-color: #ffffff;
-    
-  }
 
-  mat-toolbar {
-    height: 5rem;
-    font-size: 1.7rem;
-    font-style: italic;
-    font-weight: 600;
-  }
+
+mat-toolbar {
+  height: 5rem;
+  font-size: 1.7rem;
+  font-style: italic;
+  font-weight: 600;
+}
 
   .post_container {
     margin-top: 2em;
