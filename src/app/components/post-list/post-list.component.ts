@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Comments } from 'src/app/model/comments';
+import { Post } from 'src/app/model/post';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-post-list',
@@ -7,17 +10,49 @@ import { Router } from '@angular/router';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
+  listPost: Post[] = []
+  comments: Comments[] = []
+  
+  
+  
 
-  comments: boolean = false
-
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private postsService: PostsService) 
+    {
+      this.postsService.getListPosts().subscribe(
+        (data) => {
+          this.listPost = data
+          
+        },
+        (error) => {
+          console.log(error)
+        }
+      )
+      
+     }
 
   ngOnInit(): void {
+   
   }
 
-  openComments(){
-    this.comments = !this.comments
+  getComments(id: number) {
+    this.postsService.getComments(id).subscribe(
+      (res) => {
+        this.comments = res
+      },
+      (error) => {
+        console.log(error)
+      }
+     )
   }
+
+
+
+  
+
+  
+
+  
 
   
 

@@ -1,32 +1,16 @@
 <mat-card class="mat-elevation-z8">
     <mat-toolbar class="mat-elevation-z8" color="accent">Posts</mat-toolbar>
-    <div class="post_container mat-elevation-z8">
-        <h3>Titulo do post</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi amet vero soluta tenetur eius aliquam reiciendis est autem fugiat obcaecati provident reprehenderit labore rem assumenda fuga quo, consequuntur quos. Vitae.</p>
-        <button mat-button (click)="openComments()">comments</button>
-        <div *ngIf="comments" >
-            <div class="post_comments">
-                <span>ahash@as.com</span>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium adipisci ipsam laudantium rerum dolorem non qui doloremque vitae molestiae perferendis, voluptatum et inventore quaerat delectus, facilis excepturi temporibus. Saepe, natus.</p>
-            </div>  
-        </div>
-    </div>
-    <div class="post_container mat-elevation-z8">
-        <h3>Titulo do post</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi amet vero soluta tenetur eius aliquam reiciendis est autem fugiat obcaecati provident reprehenderit labore rem assumenda fuga quo, consequuntur quos. Vitae.</p>
-    </div>
-    <div class="post_container mat-elevation-z8">
-        <h3>Titulo do post</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi amet vero soluta tenetur eius aliquam reiciendis est autem fugiat obcaecati provident reprehenderit labore rem assumenda fuga quo, consequuntur quos. Vitae.</p>
-    </div>
-    <div class="post_container mat-elevation-z8">
-        <h3>Titulo do post</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi amet vero soluta tenetur eius aliquam reiciendis est autem fugiat obcaecati provident reprehenderit labore rem assumenda fuga quo, consequuntur quos. Vitae.</p>
-    </div>
+    <mat-card-content class="post_container mat-elevation-z8" *ngFor="let post of listPost">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.body }}</p>
 
-    <ng-template #loading>
-        <div class="spinner">
-           <mat-spinner></mat-spinner>
-        </div>
-    </ng-template>
+        <details (click)="getComments(post.id)" class="post_comments">
+            <summary>comments</summary>
+            <div *ngFor="let comment of comments">
+                <span>{{comment.email}}</span>
+                <p>{{comment.body}}</p>
+            </div>
+        </details>
+    </mat-card-content>
+
 </mat-card>
